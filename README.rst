@@ -48,7 +48,7 @@ as its one argument, and is only allowed in "location" context.
   load_module /usr/lib/nginx/modules/ngx_http_stat_check.so;
   ...
   location /my-files {
-    alias /srv/www/my-files
+    alias /srv/www/my-files;
     autoindex on;
     stat_check /tmp/blacklist/$remote_addr;
   }
@@ -71,7 +71,7 @@ Why it exists
 -------------
 
 Intended use is blocking access dynamically to various unwanted http spam and
-bots on relatively idle servers.
+bots on relatively idle servers (see also nginx-access-log-stat-block_ script).
 
 Regular nginx configuration does not allow that, as it lacks and kind of
 external/dynamic configuration.
@@ -85,6 +85,7 @@ this module is not intended or tested for/in any kind of high-load environments,
 and might not be suitable against something like DDoS attack - use CloudFlare,
 firewalls, Nginx Plus functionality or whatever dedicated solutions for that.
 
+.. _nginx-access-log-stat-block: https://github.com/mk-fg/fgtk#nginx-access-log-stat-block
 .. _premium Nginx Plus version via "keyval" module: https://docs.nginx.com/nginx/admin-guide/security-controls/blacklisting-ip-addresses/
 
 
@@ -108,6 +109,11 @@ unlocking new vast use-cases, but doubt I'll get to these unless will need it my
 
 Links
 -----
+
+- https://github.com/mk-fg/fgtk#nginx-access-log-stat-block
+
+  Script to use blocking by $remote_addr with access_log from some honeypot-trap
+  URL to block misbehaving bots that violate robots.txt and similar restrictions.
 
 - https://github.com/agile6v/awesome-nginx#third-party-modules
 - https://github.com/Vasfed/nginx_ipset_blacklist/
