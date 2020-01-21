@@ -25,7 +25,7 @@ Build / install
 Module requires source code for same-ish nginx version as it will be loaded by::
 
   % ver=1.16.1 # make sure it matches installed nginx version
-  % curl -L https://nginx.org/download/nginx-$ver.tar.gz | tar -cz
+  % curl -L https://nginx.org/download/nginx-$ver.tar.gz | tar -xz
 
   % cd nginx-$ver
   % test -e Makefile || ./configure --with-compat --add-dynamic-module=..
@@ -71,7 +71,7 @@ Why it exists
 -------------
 
 Intended use is blocking access dynamically to various unwanted http spam and
-bots on relatively idle servers (see also nginx-access-log-stat-block_ script).
+bots on relatively idle servers (see also `nginx-access-log-stat-block script`_).
 
 Regular nginx configuration does not allow that, as it lacks and kind of
 external/dynamic configuration.
@@ -85,8 +85,11 @@ this module is not intended or tested for/in any kind of high-load environments,
 and might not be suitable against something like DDoS attack - use CloudFlare,
 firewalls, Nginx Plus functionality or whatever dedicated solutions for that.
 
-.. _nginx-access-log-stat-block: https://github.com/mk-fg/fgtk#nginx-access-log-stat-block
+See `"Dynamic blacklisting configuration" blog post here`_ for even more info.
+
+.. _nginx-access-log-stat-block script: https://github.com/mk-fg/fgtk#nginx-access-log-stat-block
 .. _premium Nginx Plus version via "keyval" module: https://docs.nginx.com/nginx/admin-guide/security-controls/blacklisting-ip-addresses/
+.. _"Dynamic blacklisting configuration" blog post here: https://blog.fraggod.net/2020/01/03/dynamic-blacklisting-configuration-for-nginx-access-via-custom-module.html
 
 
 Room for improvement
