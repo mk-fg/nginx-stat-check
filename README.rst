@@ -73,17 +73,18 @@ Why it exists
 Intended use is blocking access dynamically to various unwanted http spam and
 bots on relatively idle servers (see also `nginx-access-log-stat-block script`_).
 
-Regular nginx configuration does not allow that, as it lacks and kind of
+Regular nginx configuration does not allow that, as it lacks any kind of
 external/dynamic configuration.
 
-It is however available in `premium Nginx Plus version via "keyval" module`_
+It is however available in a `premium Nginx Plus version via "keyval" module`_
 via JSON API, and maybe will be merged into open version someday, so be sure to
 check for that first.
 
-While I don't think that extra per-request stat() might make a difference,
-this module is not intended or tested for/in any kind of high-load environments,
-and might not be suitable against something like DDoS attack - use CloudFlare,
-firewalls, Nginx Plus functionality or whatever dedicated solutions for that.
+While I don't think that extra per-request stat() might make a difference
+performance-wise, this module is not intended or tested for/in any kind of
+high-load environments, and might not be suitable against something like a
+DDoS attack - use CloudFlare, firewalls, Nginx Plus functionality or whatever
+dedicated solutions for that.
 
 See `"Dynamic blacklisting configuration" blog post here`_ for even more info.
 
