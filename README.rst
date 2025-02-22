@@ -4,6 +4,12 @@ ngx_http_stat_check module
 .. contents::
   :backlinks: none
 
+Alt-URLs for this repository:
+
+- https://github.com/mk-fg/nginx-stat-check
+- https://codeberg.org/mk-fg/nginx-stat-check
+- https://fraggod.net/code/git/nginx-stat-check
+
 
 Description
 -----------
